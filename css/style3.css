@@ -1,0 +1,237 @@
+/* ============================
+   Zomato-style Login Page CSS
+   Theme color: Red (#E23744 — Zomato's signature red)
+   ============================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #1c1c1c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-bottom: none;
+  background-color: #e23744;
+}
+
+.logo img {
+  height: 32px;
+  display: block;
+}
+
+.signup a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 18px;
+  border: 1px solid white;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* .signup a:hover {
+  background-color:rgb(0, 0, 0);
+  color: #ffffff;
+} */
+
+.signup a:hover {
+    color: #ffd6d6;
+}
+
+/* ---------- Main / Login Card ---------- */
+main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Background image (the <img src="/bg.png"> placed right inside <main>) */
+main > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Dark overlay so the form stays readable on top of the photo */
+main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+main::before {
+  content: "Login";
+  position: relative;
+  z-index: 2;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 24px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mobile,
+.pswd {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.pswd {
+  margin-bottom: 0;
+}
+
+.mobile label,
+.pswd label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.mobile input,
+.pswd input {
+  padding: 12px 14px;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile input:focus,
+.pswd input:focus {
+  border-color: #e23744;
+  box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.15);
+}
+
+.mobile input.invalid,
+.pswd input.invalid {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.12);
+}
+
+.error-msg {
+  width: 100%;
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 16px;
+  min-height: 16px;
+}
+
+
+/* Login button (static div inside .card) */
+
+.card .button {
+  width: 100%;
+  padding: 13px 0;
+  background-color: #e23744;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 16px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.card .button:hover {
+  background-color: #c92a37;
+}
+
+.card .button:active {
+  transform: scale(0.98);
+}
+
+.card .button.disabled {
+  background-color: #f1a6ac;
+  cursor: not-allowed;
+}
+
+main > a {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+main > a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  padding: 18px 20px;
+  border-top: 1px solid #e23744;
+  background-color: #e23744;
+}
+
+footer a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  header {
+    padding: 14px 20px;
+  }
+
+  main::before {
+    font-size: 22px;
+  }
+}
