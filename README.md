@@ -32,7 +32,7 @@ This project is a food delivery website interface inspired by Zomato, including 
 ![Login Page](screenshots/login.png)
 
 ### Add Restaurant Page
-![Add Restaurant Page](screenshots/add-restaurant.png)
+![Add Restaurant Page](screenshots/add_restaurant.png)
 
 ### Sign Up Page
 ![Sign Up Page](screenshots/signup.png)
